@@ -11,7 +11,7 @@
 # Step 1: Define the Item class with initialisation that uses setters for name, price, and quantity.
 # Instead of directly setting private attributes in the __init__ method, use the class's own setters
 # We will define the setters in later steps to add validation to the setting of these attributes.
-class inventory:
+class Item:
     def __init__(self, name, qty, price):
         self.set_name(name)
         self.set_qty(qty)
@@ -24,11 +24,8 @@ class inventory:
 # Step 2: Implement a getter for the name attribute.
 # This method should simply return the value of the private _name attribute.
 
-def get_name(self):
-    return self.name
-
-def get_price(self):
-    return f"${self._price:.2f}"
+    def get_name(self):
+        return self.name
 
 
 
@@ -36,17 +33,19 @@ def get_price(self):
 # This method should check if the provided value is a string before setting the _name attribute.
 # If the value is not a string, it should raise a ValueError.
 
-def set_name(self, name):
-    if isinstance(name, )
-
-
+    def set_name(self, name):
+        if isinstance(name, str) and name !="":
+            self.name = name
+        else:
+            raise ValueError("not a valid string")
 
 
 # Step 4: Implement a getter for the price attribute.
 # This method should return the price formatted as a string with two decimal places.
 
 
-
+    def get_price(self):
+        return f"${self.price:.2f}"
 
 
 # Step 5: Implement a setter for the price attribute.
@@ -55,14 +54,16 @@ def set_name(self, name):
 
 
 
-def set_qty(self, new_price):
-    if new_price < 0
-
+    def set_price(self, new_price):
+        if new_price < 0:
+            raise ValueError ("can not be a negitive")
+        self.price = new_price
 
 # Step 6: Implement a getter for the quantity attribute.
 # This method should simply return the value of the private _quantity attribute.
 
-
+    def get_qty(self):
+        return self.qty
 
 
 
@@ -70,14 +71,14 @@ def set_qty(self, new_price):
 # This method should check if the provided value is a non-negative integer before setting the _quantity attribute.
 # If the value is negative, it should raise a ValueError.
 
-
+    def set_qty(self, new_qty):
+        if new_qty < 0:
+            raise ValueError ("can not be a negitive")
+        self.qty = new_qty
 
 
 
 # Step 8: Create instances of the Item class and demonstrate the use of getters and setters.
 # For example, create a new Item and attempt to set its attributes with both valid and invalid values.
 # Print the outputs using the getters to show how the data is managed internally.
-
-
-
 
