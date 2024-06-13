@@ -37,14 +37,17 @@ class Inventory:
         print(f"Item, {item_selection} is not in the list")
     def print_list(self, name, price, qty):
         for item in self._item:
-            print (f"{item.name}, {item.price}, {item.qty}:")
+            print (f"{item.get_name}, {item.get_price}, {item.get_qty}:")
             
     def update_item(self, name, price, qty):
 
         print("")
 
 
+milk = Item("bob", 1, 2)
+inv = Inventory()
 
+inv.add_item()
 
 
 

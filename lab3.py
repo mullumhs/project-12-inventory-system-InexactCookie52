@@ -10,11 +10,16 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 # Step 1: Import necessary classes (Item class from lab1, InventoryManager class from lab2)
-
+from lab1 import Item
+from lab2 import Inventory 
 
 # Step 2: Define an add_item function that prompts the user for item details and adds the item to the inventory
-
-
+def add_item_ui(inventory):
+    name = input("Enter a name: ")
+    price = input("Enter a price: ")
+    qty = input("Enter a qty: ")
+    inventory.add_item(name, price, qty)
+    print ("Item Added")
 # Step 3: Define an update_item function that prompts the user for item details and updates the item in the inventory
 
 
@@ -26,10 +31,10 @@
 
 def main():
     # Step 6: Initialise an instance of InventoryManager
-    
+    inventory = Inventory()
 
     # Step 7: Use the actions dictionary to map user input to the corresponding functions
-    actions = {}
+    actions = {"1":add_item_ui }
     
     while True:
         print("\nInventory Management System")
@@ -43,7 +48,7 @@ def main():
 
         # Step 8: Implement the logic to call the appropriate function based on user input
         # Exit the loop if the user chooses 5, otherwise display an error message for invalid choices
-
+        actions[choice](inventory)
 
         
 
